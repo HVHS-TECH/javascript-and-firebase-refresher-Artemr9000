@@ -4,11 +4,12 @@ document.getElementById("welcomeMessage").innerHTML = "You've connected to the J
 
 //second step\\ 
 function myFunction() {
-  document.getElementById("welcomeMessage").innerHTML = "Hello World";
+  document.getElementById("welcomeMessage").innerHTML = "You pressed the button!";
 }
 
-//third step\\ 
+//third step & fourth step\\ 
 function thirdstep() {
   var x = document.getElementById("myText").value;
-  document.getElementById("demo").innerHTML = x;
+  document.getElementById("welcomeMessage").innerHTML = x;
 }
+
