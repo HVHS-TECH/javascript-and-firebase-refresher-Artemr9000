@@ -9,7 +9,8 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-<script src="fb_Setup.mjs"></script>
+<script type="module" src="/js/fb_Setup.mjs"></script>
+
 
 
 <body>
@@ -36,7 +37,7 @@
         <li>Create a new Firebase or re-use yours from last year</li>
         <li>Remember how to connect up the 'authorised domains'</li>
         <li>Add a button - Make it save the text to Firebase </li>
-          <button onclick="fb_login()">Try it</button>
+          <button id="loginButton" onclick="fb_login()()">Try it</button>
         <li>Add another button - Make it read the message from Firebase and write it to the heading of this page</li>
     </ul>
     <h4>Firebase logins</h4>

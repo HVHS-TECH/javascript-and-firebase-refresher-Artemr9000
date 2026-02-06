@@ -77,11 +77,11 @@ export function fb_login() {
             userdetails.photo = result.user.photoURL;
             userdetails.uid = result.user.uid;
             console.log('Logged in user:', userdetails); //DIAG
-            document.getElementById('p_fbLogin').textContent = `Logged in as: ${userdetails.email}`; //DIAG
+            fb_write();
         })
         .catch((error) => {
             console.log(error); //DIAG
-            document.getElementById('p_fbLogin').textContent = `Login error: ${error.message}`; //DIAG
+           
         });
 }
 
@@ -166,4 +166,8 @@ export function fb_write() {
         console.log(error); //DIAG
         document.getElementById('p_fbWriteRec').textContent = `Write error: ${error.message}`; //DIAG
     });
-}
+}       
+
+
+fb_initialise();
+window.fb_login = fb_login
