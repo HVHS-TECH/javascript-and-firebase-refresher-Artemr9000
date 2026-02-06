@@ -77,6 +77,7 @@ export function fb_login() {
             userdetails.photo = result.user.photoURL;
             userdetails.uid = result.user.uid;
             console.log('Logged in user:', userdetails); //DIAG
+            fb_initialise();
             fb_write();
         })
         .catch((error) => {
@@ -158,16 +159,45 @@ export function fb_write() {
     const dbRef = ref(fb_gamedb, path);
     set(dbRef, userdetails)
     .then(() => {
-        document.getElementById('p_fbWriteRec').textContent = `Wrote record for ${userdetails.displayName}`; //DIAG
+       
         console.log('%c fb_write(): OK',
         'color: ' + COL_C + '; background-color: ' + COL_B + ';');
     })
     .catch((error) => {
         console.log(error); //DIAG
-        document.getElementById('p_fbWriteRec').textContent = `Write error: ${error.message}`; //DIAG
+       //DIAG
     });
 }       
+
+/**************************************************************/
+// fb_read()
+// Called by html READ RECORD button
+// Read a record to Firebase Realtime Database
+// Input:  n/a
+// Return: n/a
+/**************************************************************/
+export function fb_read(){
+    const path = 'userdetails/' + userdetails.uid;
+    console.log(userdetails);
+    console.log(fb_gamedb);
+    const dbRef= ref(fb_gamedb, path);
+    console.log(dbRef);
+    get(dbRef).then((snapshot) => {
+
+        let fb_data = snapshot.val();
+if (fb_data != null) {
+console.log(fb_data)
+        } else {
+        console.log("✅ Code for no record found goes here")   
+        }
+
+    }).catch((error) => {
+console.log(error)
+    });
+}
+
 
 
 fb_initialise();
 window.fb_login = fb_login
+window.fb_read = fb_read
