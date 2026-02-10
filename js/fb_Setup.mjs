@@ -2,7 +2,7 @@
 
 /**************************************************************/
 // fb_io.mjs
-// Firebase I/O operations for 12COMP 2025 project
+// Firebase I/O operations for 13COMP 2025 project
 // Written by Artem Rakhimov, Term 1 2025
 //
 // All letiables & functions begin with fb_, all const with FB_
@@ -197,7 +197,7 @@ console.log(error)
 }
 
 
-
+//work either on start up or click of a button\\ 
 fb_initialise();
 window.fb_login = fb_login
 window.fb_read = fb_read
