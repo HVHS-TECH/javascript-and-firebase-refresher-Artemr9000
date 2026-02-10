@@ -150,7 +150,7 @@ export function fb_logout() {
 // Input:  n/a
 // Return: n/a
 /**************************************************************/
-export function fb_write() {
+export async function fb_write() {
     console.log('%c fb_write(): ',
         'color: ' + COL_C + '; background-color: ' + COL_B + ';');
 
@@ -176,7 +176,7 @@ export function fb_write() {
 // Input:  n/a
 // Return: n/a
 /**************************************************************/
-export function fb_read(){
+ export async function fb_read(){
     const path = 'userdetails/' + userdetails.uid;
     console.log(userdetails);
     console.log(fb_gamedb);
