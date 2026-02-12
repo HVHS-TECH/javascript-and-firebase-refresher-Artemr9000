@@ -10,7 +10,11 @@ body {
     align-items: center; /* Center horizontally */
     min-height: 100vh; /* Full viewport height */
     text-align: center; /* Center all text */
+
+
+
 }
+
 
 h1 {
     color: #333; /* Dark gray for the heading */
